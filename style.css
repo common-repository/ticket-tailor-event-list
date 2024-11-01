@@ -1,0 +1,174 @@
+.ticket_tailor_event_list {
+	color: var(--wp--preset--color--contrast, inherit);
+}
+
+.ticket_tailor_event_list .ticket_tailor_event_none {
+	text-align: center;
+    font-size: 1.5rem;
+}
+
+.ticket_tailor_event_list hr.dashicon[data-ticket-tailor-date] {
+    margin-left: 140px;
+}
+
+.ticket_tailor_event_list hr[data-ticket-tailor-date] {
+    margin: 0 0 1rem 0;
+    border-color: var(--wp--preset--color--ti-accent, var(--wp--preset--color--accent));
+    margin-left: 110px;
+}
+
+.ticket_tailor_event_list hr[data-ticket-tailor-date]::after {
+    display: block;
+    content: attr(data-ticket-tailor-date);
+    position: absolute;
+    transform: translate(-110px, -50%);
+    padding-right: 1rem;    
+    font-weight: 600;
+    margin-left: -0.1rem;
+}
+
+.ticket_tailor_event_list hr.dashicon[data-ticket-tailor-date]::before {
+    display: block;
+	font-family: "dashicons";
+    content: "\f508";
+    position: absolute;
+    transform: translate(-140px, -50%);
+    padding-right: 1rem;    
+    font-weight: 500;
+    margin-left: -0.1rem;
+}
+
+.ticket_tailor_event_list hr.dashicon[data-ticket-tailor-date]::after {
+    transform: translate(-110px, -50%);
+}
+
+
+.ticket_tailor_event {
+	padding: 1rem 1rem 3rem 1rem;
+
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto 1fr auto;
+    grid-column-gap: 1rem;
+    grid-row-gap: 0;
+}
+
+.ticket_tailor_event .ticket_tailor_event_header {
+    
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+.ticket_tailor_event .ticket_tailor_event_title {
+	font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.ticket_tailor_event .ticket_tailor_event_body {
+	display: flex;
+	column-gap: 2rem;
+}
+
+.ticket_tailor_event .ticket_tailor_event_time_range {
+	font-size: .8rem;
+	margin: .5rem 0;
+	display: block;
+}
+
+.ticket_tailor_event .ticket_tailor_event_time_range .to {
+	font-size: 0.75rem;
+    font-style: italic;
+    margin: 0 .5rem;
+}
+
+.ticket_tailor_event .ticket_tailor_event_venue {
+
+	font-size: .8rem;
+	margin: .5rem 0;
+	display: block;
+}
+
+.ticket_tailor_event .ticket_tailor_event_venue .dashicons {
+    width: 16px;
+    height: 16px;
+    font-size: 16px;
+    vertical-align: text-bottom;
+	margin-right: .5rem;
+}
+
+.ticket_tailor_event .ticket_tailor_event_venue .postcode {
+	text-transform: upper-alpha;
+}
+
+.ticket_tailor_event .ticket_tailor_event_description {
+	font-size: 1rem;
+
+    grid-area: 2 / 1 / 3 / 2;
+}
+
+
+.ticket_tailor_event.reduced .ticket_tailor_event_description p:not(:first-child) {
+	display: none;
+}
+
+.ticket_tailor_event.reduced {
+    grid-column-gap: 0;
+        grid-row-gap: 0;
+}
+
+.ticket_tailor_event.reduced .ticket_tailor_event_description p {
+	margin: 0;
+}
+
+.ticket_tailor_event .ticket_tailor_event_image {
+	align-content: center;
+	margin: auto;
+
+    grid-area: 1 / 2 / 4 / 3;
+}
+
+.ticket_tailor_event .ticket_tailor_event_actions {
+	margin: 1rem 0;
+
+    grid-area: 3 / 1 / 4 / 2;
+}
+
+.ticket_tailor_event .ticket_tailor_event_link {
+    line-height: 20px;
+    padding: 9px 15px;
+    min-height: 40px;
+    background: var(--wp--preset--color--ti-accent, var(--wp--preset--color--accent));
+    border: 0;
+    border-color: var(--wp--preset--color--ti-accent, var(--wp--preset--color--accent));
+    border-radius: 3px;
+    box-shadow: none;
+    color: var(--wp--preset--color--ti-fg-alt, var(--wp--preset--color--contrast));
+    font-size: var(--wp--preset--font-size--normal);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.ticket_tailor_event .ticket_tailor_event_link:hover {
+    text-decoration: underline;
+}
+
+@media only screen and (max-width: 800px) {
+	.ticket_tailor_event {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, auto);
+        grid-column-gap: 1rem;
+        grid-row-gap: .5rem;
+    }
+
+    .ticket_tailor_event .ticket_tailor_event_image {
+         grid-area: 2 / 1 / 3 / 2;
+    }
+
+    .ticket_tailor_event .ticket_tailor_event_description {
+        grid-area: 3 / 1 / 4 / 2;
+    }
+
+    .ticket_tailor_event .ticket_tailor_event_actions {
+        grid-area: 4 / 1 / 5 / 2;
+    }
+}
